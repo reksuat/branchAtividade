@@ -9,6 +9,8 @@ process.stdin.once("data",function(data){
 
     let resultado = calculaMmc(num1, num2);
         console.log("O MMC é:", resultado);
+    let resultadoMdc = calculaMdc(num1, num2);
+      console.log("O MDC é:", resultadoMdc);
 
         process.exit();
 
@@ -23,6 +25,15 @@ process.stdin.once("data",function(data){
         }
         return (n1*n2)/x;
       };
+
+      function calculaMdc(a, b) {
+        while (b !== 0) {
+            let resto = a % b;
+            a = b;
+            b = resto;
+        }
+        return a;
+    }
 })
 })
 
